@@ -1,31 +1,44 @@
 # README
-アプリケーション名
+
+## アプリケーション名
 trip-29798
 
-アプリケーション概要
+## アプリケーション概要
 兵庫県に特化した観光口コミサイトです。
 
-URL
+## URL
 
-テスト用アカウント
+## テスト用アカウント
 
-利用方法
-口コミ形式で画像とテキストを投稿する。投稿に対してコメント、評価をつけることができます
+## 利用方法
+口コミ形式で画像とテキストを投稿する。投稿に対してコメント、評価をつけることができます。
 
-目指した課題解決
+## 目指した課題解決
 既存のサービスでは有名観光地などしか扱っていない（もしくはたくさんの情報によって埋もれてしまう）ため地域限定の観光案内サービスを作ろうと考えた。地域を絞ることによって投稿された情報が見やすくよりローカルな情報を知ることができます。
 
-洗い出した要件
+## 洗い出した要件
+ユーザー管理機能
+ユーザーの管理をしやすくします。
 
-実装した機能についてのGIFと説明
+画像メッセージ投稿機能
+テキストと画像を投稿します。
 
-実装予定の機能
-タグ付機能。タグをつけることによってより情報を探しやすくしております
+コメント投稿機能
+投稿された画像にコメントします。
 
-データベース設計
+検索機能
+検索し欲しい情報を見つけやすくします。
+
+## 実装した機能についてのGIFと説明
+
+## 実装予定の機能
+タグ付機能
+タグをつけることによってより情報を探しやすくしております。
+
+## データベース設計
 https://gyazo.com/776e84e0ca0642a35007ede0881a9ff4
 
-ローカルでの動作方法
+## ローカルでの動作方法
 
 # テーブル設計
 
@@ -97,30 +110,4 @@ https://gyazo.com/776e84e0ca0642a35007ede0881a9ff4
 - belongs_to :area
 - belongs_to :user
 
-
-
-
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
