@@ -1,0 +1,55 @@
+* {
+  text-decoration: none;
+  /* box-sizing: border-box; */
+  /* これはどこに記述するのが正しいのか */
+}
+
+
+.top-page-header{
+  margin-left: 120px;
+  margin-right: 120px;
+  height: 100px;
+  line-height: 100px;
+  background-color: skyblue;
+}
+
+.nav{
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+
+.lists-right{
+  display: flex;
+}
+
+.user-nickname{
+  margin-right: 100px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 30px;
+  /* ホバーとおパシティー使う */
+}
+
+.logout{
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 30px;
+    /* ホバーとおパシティー使う */
+}
+
+.login{
+  margin-right: 100px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 30px;
+    /* ホバーとおパシティー使う */
+}
+
+.sign-up{
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 30px;
+ /* ホバーとおパシティー使う */
+}
