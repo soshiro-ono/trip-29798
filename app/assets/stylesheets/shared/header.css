@@ -26,18 +26,30 @@
 
 .user-nickname{
   margin-right: 100px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 30px;
   /* ホバーとおパシティー使う */
 }
 
 .logout{
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 30px;
     /* ホバーとおパシティー使う */
 }
 
 .login{
   margin-right: 100px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 30px;
     /* ホバーとおパシティー使う */
 }
 
 .sign-up{
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 30px;
  /* ホバーとおパシティー使う */
 }

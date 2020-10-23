@@ -3,7 +3,8 @@
     <div class='account-page__inner--left account-page__header'>
       <h2>ログイン入力画面</h2>
       <h5>登録しているユーザーでログイン</h5>
-      <%= render "devise/shared/links"%>
+      <%# <%= render "devise/shared/links"%>
+      <%# signup画面に飛ばしたりできる↑ %>
     </div>
     <div class='account-page__inner--right user-form'>
       <%= form_with model: resource, as: resource_name, url: session_path(resource_name), local: true do |f|%>
@@ -17,7 +18,7 @@
           <div class='field'>
             <div class='field-label'>
               <%= f.label :password%>
-              <i>(英数字8文字以上)</i>
+              <i>(英数字6文字以上)</i>
             </div>
             <div class='field-input'>
               <%= f.password_field :password, autocomplete: "off"%>
