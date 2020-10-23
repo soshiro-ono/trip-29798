@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # get 'areas/index'
+  # get 'spots/index'
   devise_for :users
-  root to: 'areas#index'
-  resources :area
+  root to: 'spots#index'
+  resources :spot
 end

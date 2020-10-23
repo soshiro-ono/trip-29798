@@ -52,12 +52,12 @@ https://gyazo.com/776e84e0ca0642a35007ede0881a9ff4
 |encrypted_password| string | null: false |
 
 ### Association
-- has_many :areas
+- has_many :spots
 - has_many :comments
 
 
 
-## areas テーブル
+## spots テーブル
 
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
@@ -67,8 +67,8 @@ https://gyazo.com/776e84e0ca0642a35007ede0881a9ff4
 <!-- もしかするとこの先何か追加するかもアクティブハッシュ？ -->
 
 ### Association
-- has_many :area_tags
-- has_many :tags, through: area_tags
+- has_many :spot_tags
+- has_many :tags, through: spot_tags
 - has_many :comments
 
 
@@ -81,20 +81,20 @@ https://gyazo.com/776e84e0ca0642a35007ede0881a9ff4
 <!-- タグ付機能の実装を参照、chat-appの動画ではない -->
 
 ### Association
-- has_many :area_tags
-- has_many :areas, through: area_tags
+- has_many :spot_tags
+- has_many :spots, through: spot_tags
 
 
 
-## area_tags テーブル
+## spot_tags テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
-| area   | references | null: false, foreign_key: true |
+| spot   | references | null: false, foreign_key: true |
 | tag  | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :area
+- belongs_to :spot
 - belongs_to :tag
 
 
@@ -104,11 +104,11 @@ https://gyazo.com/776e84e0ca0642a35007ede0881a9ff4
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
 | user    | references | null: false, foreign_key: true |
-| area    | references | null: false, foreign_key: true |
+| spot    | references | null: false, foreign_key: true |
 | text    | text | null: false |
 
 ### Association
-- belongs_to :area
+- belongs_to :spot
 - belongs_to :user
 
 
