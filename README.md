@@ -70,6 +70,7 @@ https://gyazo.com/776e84e0ca0642a35007ede0881a9ff4
 - has_many :spot_tags
 - has_many :tags, through: spot_tags
 - has_many :comments
+- belongs_to :user
 
 
 

@@ -1,14 +1,9 @@
 <%= render "shared/header" %>
-<div class='main'>
-  <div class="area-contents">
-    <h2 class='title'>スポット一覧</h2>
-  </div>
-  <%# <ul class="area-lists"> %>
-    <%# <% @spots.each do |spot| %> %>
-      <%# <li class='list'> %>
-        <%# <%= link_to spot_path(spot.id) do %> %>
-        <%# クリックすると詳細ページに飛ぶ %>
-      <%# </li> %>
-    <%# <% end %> %>
-  <%# </ul> %>
+<div class="contents row">
+  <% @spots.each do |spot| %>
+      <p><%= spot.title %></p>
+      <span class="title">
+        <%= spot.title %>
+      </span>
+  <% end %>
 </div>
