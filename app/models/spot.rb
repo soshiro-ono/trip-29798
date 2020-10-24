@@ -7,4 +7,6 @@ class Spot < ApplicationRecord
   # has_one_attached :ファイル名
   # Active Storageのテーブルとspotsテーブルのアソシエーションを定義した。
   # spots_controller.rbにて、imageカラムの保存を許可(ストロングパラメーター)
+  validates :title, presence: true
+  validates :description, presence: true
 end
