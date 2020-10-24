@@ -1,0 +1,9 @@
+<div class="container">
+  <h3>投稿する</h3>
+  <%= form_with(model: @spot, local: true) do |f| %>
+    <%= f.file_field :image, id:"item-image" %>
+    <%= f.text_field :title, placeholder: "タイトルを入れて下さい" %>
+    <%= f.text_area :description, placeholder: "感想を入力して下さい" %>
+    <%# 後から日付とか神戸市とか北区とかの住所のアドレスも登録できるようにする %>
+  <% end %>
+</div>

@@ -3,4 +3,7 @@ class SpotsController < ApplicationController
     @spots = Spot.all
   end
 
+  def new
+    @Spot = Spot.new
+  end
 end
