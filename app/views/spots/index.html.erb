@@ -2,15 +2,13 @@
 <div class="contents row">
   <% @spots.each do |spot| %>
       <p><%= spot.title %></p>
-      <span class="title">
-        <%# <%= spot.title %> %>
-      </span>
+      <%= image_tag spot.image %>
   <% end %>
 
   <div class='purchase-btn'>
     <a href="/spots/new">
-      投稿する
-      <%# <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+      <%= image_tag 'camera.png' , size: '120x120' ,class: "purchase-btn-icon" %>
     </a>
   </div>
 </div>
+<%= render "shared/footer" %>
