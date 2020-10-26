@@ -1,0 +1,27 @@
+<%= render "shared/header" %>
+
+<div class='title-contents'>
+  <h2 class='service-title'>
+    みんなが知らない!
+    私の知ってるをシェアしよう！
+  </h2>
+  <p class='service-explain'>
+    TRIP HYOGOは兵庫のローカル情報を簡単投稿できるサイトです
+  </p>
+</div>
+
+
+
+<div class="contents row">
+  <% @spots.each do |spot| %>
+      <p><%= spot.title %></p>
+      <%= image_tag spot.image %>
+  <% end %>
+
+  <div class='purchase-btn'>
+    <a href="/spots/new">
+      <%= image_tag 'camera.png' , size: '120x120' ,class: "purchase-btn-icon" %>
+    </a>
+  </div>
+</div>
+<%= render "shared/footer" %>
