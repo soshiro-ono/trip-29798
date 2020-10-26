@@ -14,8 +14,10 @@
 
 <div class="contents row">
   <% @spots.each do |spot| %>
-      <p><%= spot.title %></p>
-      <%= image_tag spot.image %>
+    <%= link_to spot_path(spot.id) do %>
+        <p><%= spot.title %></p>
+        <%= image_tag spot.image %>
+    <% end %>
   <% end %>
 
   <div class='purchase-btn'>
