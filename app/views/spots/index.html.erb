@@ -1,29 +1,48 @@
 <%= render "shared/header" %>
 
-<div class='title-contents'>
-  <h2 class='service-title'>
-    みんなが知らない!
-    私の知ってるをシェアしよう！
-  </h2>
-  <p class='service-explain'>
-    TRIP HYOGOは兵庫のローカル情報を簡単投稿できるサイトです
-  </p>
-</div>
-
-
-
-<div class="contents row">
-  <% @spots.each do |spot| %>
-    <%= link_to spot_path(spot.id) do %>
-        <p><%= spot.title %></p>
-        <%= image_tag spot.image %>
-    <% end %>
-  <% end %>
-
-  <div class='purchase-btn'>
-    <a href="/spots/new">
-      <%= image_tag 'camera.png' , size: '120x120' ,class: "purchase-btn-icon" %>
-    </a>
+<div class="main">
+  <div class="main-content wrapper">
+    <h2 class="page-title">SPOT</h2>
+    <p>体に美味しい自然食を提供する。TRIP HYOGO。地方特化したローカルが情報満載です。
+      身近な知らない世界の発見に出かけましょう。
+    </p>
   </div>
+
+
+  <%# 画像一覧 %>
+  <div class="contents row">
+    <%# <% @spots.each do |spot| %>
+      <%# <%= link_to spot_path(spot.id) do %> %>
+          <%# <p><%= spot.title %></p> %>
+          <%# <%= image_tag spot.image %> %>
+      <%# <% end %> %>
+    <%# <% end %> %> %>
+  <%# 画像一覧 %>
+    <div class="grid">
+      <% @spots.each do |spot| %>
+        <%= link_to spot_path(spot.id) do %>
+            <div class="spot">
+              <%= image_tag spot.image, class: "spot-img"%>
+              <p><%= spot.title %></p>
+            </div>
+        <% end %>
+      <% end %>
+    </div>
+
+
+
+
+
+
+
+  <%# 画像投稿 %>
+    <div class='purchase-btn'>
+      <a href="/spots/new">
+        <%= image_tag 'camera.png' , size: '120x120' ,class: "purchase-btn-icon" %>
+      </a>
+    </div>
+  </div>
+  <%# 画像投稿 %>
+
 </div>
 <%= render "shared/footer" %>

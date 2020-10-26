@@ -1,15 +1,20 @@
-.title-contents {
-  width: 100vw;
-  background-image: url('ルミナリエ.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 5vh 15vw;
-  color: skyblue;
-  /* text-shadow: 0 0 5px rgba(0, 0, 0, 0.9); */
+
+
+
+.main{
+  max-width: 560px;
+  margin-top: 10%;
 }
 
+.grid{
+  display: grid;
+  gap:26px;
+  grid-template-columns: repeat(3,1fr);
+  margin-top: 6%;
+  margin-bottom: 50px;
+}
+
+.spot-img {
+  width: 50vh;
+  height: 50vh;
+}
