@@ -1,6 +1,5 @@
 <div class="container">
-  <%= link_to image_tag('兵庫県.png' , size: '185x50'), "/" %>
-
+  <h3>投稿する</h3>
   <%= form_with(model: @spot, local: true) do |f| %>
     <%= f.file_field :image, id:"item-image" %>
     <%= f.text_field :title, placeholder: "タイトルを入れて下さい" %>
