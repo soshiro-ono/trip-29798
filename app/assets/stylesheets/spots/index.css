@@ -1,0 +1,36 @@
+.main{
+  max-width: 1100px;
+  margin: auto;
+}
+
+.main-content{
+  text-align: center;
+}
+
+.purchase-btn{
+  margin-bottom: 5%;
+}
+
+/* 画面中央にずらす */
+.page-title{
+  font-size: 35px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-top: 10%;
+
+}
+/* 画面中央にずらす */
+
+
+.grid{
+  display: grid;
+  gap:26px;
+  grid-template-columns: repeat(3,1fr);
+  margin-top: 6%;
+  margin-bottom: 50px;
+  margin: 0px auto;
+}
+
+.spot-img {
+  width: 45vh;
+  height: 45vh;
+}

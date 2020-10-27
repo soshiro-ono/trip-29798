@@ -2,29 +2,33 @@
 
 
 <div class="main">
-  <div class='spot-img-content'>
-    <%= image_tag @spot.image ,class:"spot-box-img" %>
-  </div>
+  <div class="spot-show">
+    <div class='spot-img-content'>
+      <%= image_tag @spot.image ,class:"spot-box-img" %>
+    </div>
 
-  <% if user_signed_in? %>
-    <% if @spot.user_id == current_user.id %>
-      <%= link_to '商品の編集', edit_spot_path, method: :get, class: "spot-red-btn" %>
-      <p class='or-text'>or</p>
-      <%= link_to '削除', spot_path, method: :delete, class:'spot-destroy' %>
+    <% if user_signed_in? %>
+      <% if @spot.user_id == current_user.id %>
+        <%= link_to '商品の編集', edit_spot_path, method: :get, class: "spot-red-btn" %>
+        <p class='or-text'>or</p>
+        <%= link_to '削除', spot_path, method: :delete, class:'spot-destroy' %>
+      <% end %>
     <% end %>
-  <% end %>
 
-  <table class="detail-table">
-    <tbody>
-      <tr>
-        <td class="detail-value"><%= @spot.user.nickname %></td>
-      </tr>
-      <tr>
-        <td class="detail-value"><%= @spot.title %></td>
-      </tr>
-      <tr>
-        <td class="detail-value"><%= @spot.description %></td>
-      </tr>
-    </tbody>
-  </table>
+
+    <h1 class="spot-midasi">SPOTの情報</h1>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <td class="detail-value"><%= @spot.user.nickname %></td>
+        </tr>
+        <tr>
+          <td class="detail-value"><%= @spot.title %></td>
+        </tr>
+        <tr>
+          <td class="detail-value"><%= @spot.description %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

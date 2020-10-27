@@ -1,13 +1,8 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
-<header class='top-page-header'>
-  <div class='nav'>
-    <div class="lists-left">
-      <div class="header-title">
-        Trip-hyogo
-        <%# ここをaのリンクに変えるかも、クリックするとトップページに戻すため %>
-      </div>
-    </div>
-    <ul class='lists-right'>
+<header class='top-page-header wrapper'>
+  <h1 class="title">TRIP HYOGO</h1>
+  <nav>
+    <ul class="main-nav">
       <%# deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
       <% if user_signed_in?%>
         <li><%= link_to current_user.nickname, new_user_session_path, class: "user-nickname" %></li>
@@ -18,7 +13,7 @@
       <% end %>
         <%# //deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
     </ul>
-  </div>
+  </nav>
 </header>
 
 

@@ -1,10 +1,25 @@
 <div class="container">
-  <h3>投稿する</h3>
-  <%= form_with(model: @spot, local: true) do |f| %>
-    <%= f.file_field :image, id:"item-image" %>
-    <%= f.text_field :title, placeholder: "タイトルを入れて下さい" %>
-    <%= f.text_area :description, placeholder: "感想を入力して下さい" %>
-    <%# 後から日付とか神戸市とか北区とかの住所のアドレスも登録できるようにする %>
-    <%= f.submit "投稿する" ,class:"sell-btn" %>
-  <% end %>
+  <%= link_to image_tag('兵庫県.png' , size: '185x50'), "/" %>
+
+  <div class="spot-main">
+    <%= form_with(model: @spot, local: true) do |f| %>
+        <h2>投稿画像</h2>
+      <div class="click-upload">
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+        <h2>タイトル入力欄</h2>
+      <div class="new-spots">
+        <%= f.text_field :title, class:"spots-text", placeholder: "タイトルを入れて下さい" %>
+      </div>
+        <h2>コメント入力欄</h2>
+      <div class="new-spots">
+        <%= f.text_area :description, class:"spots-text", placeholder: "感想を入力して下さい" %>
+      </div>
+      <div class="spot-btn-contents">
+        <%= f.submit "投稿する" ,class:"spot-btn" %>
+      </div>
+    <% end %>
+  </div>
 </div>
+
+<%# 後から日付とか神戸市とか北区とかの住所のアドレスも登録できるようにする %>
