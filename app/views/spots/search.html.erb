@@ -1,0 +1,22 @@
+<%= render "shared/header" %>
+
+<div class="main">
+  <div class="spot-search">
+    <%= form_with(url: search_spots_path, local: true, method: :get, class: "search-form") do |f| %>
+      <%= f.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+      <%= f.submit "検索", class: "search-btn" %>
+    <% end %>
+    <div class="contents row">
+      <% @spots.each do |spot| %>
+        <%= link_to spot_path(spot.id) do %>
+          <div class="spot">
+            <%= image_tag spot.image, class: "spot-box-img"%>
+            <p><%= spot.title %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
