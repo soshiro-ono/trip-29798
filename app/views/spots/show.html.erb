@@ -30,5 +30,34 @@
         </tr>
       </tbody>
     </table>
+
+    <%# コメント記入欄 %>
+    <div class="container">
+      <% if current_user %>
+        <%= form_with(model: [@spot, @comment], class:"comment-btn", local: true) do |f| %>
+          <%= f.text_area :text, placeholder: "コメントする", class:"comments-text", rows: "2" %>
+          <%= f.submit "投稿する", class:"comment-send" %>
+        <% end %>
+      <% else %>
+        <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p>
+        </strong>
+      <% end %>
+
+
+      <div class="comments">
+        <h4>＜コメント一覧＞</h4>
+        <% if @comments %>
+          <% @comments.each do |comment| %>
+            <p>
+              <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+              <%= comment.text %>
+            </p>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <%# コメント記入欄 %>
   </div>
 </div>
+
+<%= render "shared/footer" %>

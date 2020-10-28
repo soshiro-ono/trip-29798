@@ -20,6 +20,8 @@ class SpotsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @spot.comments.includes(:user)
   end
 
   def edit
@@ -50,5 +52,6 @@ class SpotsController < ApplicationController
   def set_spot
     @spot = Spot.find(params[:id])
   end
+  # edit, :show, :update,:destroyをまとめている
 
 end
