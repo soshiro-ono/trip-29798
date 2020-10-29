@@ -11,6 +11,7 @@ class Spot < ApplicationRecord
   # アクティブハッシュのアソシエーション
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :city
+  belongs_to_active_hash :location
   # アクティブハッシュのアソシエーション
 
 
