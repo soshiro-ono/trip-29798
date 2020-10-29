@@ -1,5 +1,5 @@
 class SpotsController < ApplicationController
-  before_action :authenticate_user!,except: [:index,:show]
+  before_action :authenticate_user!,except: [:index,:show,:search]
   before_action :set_spot, only: [:edit, :show, :update,:destroy]  
 
   def index
@@ -41,6 +41,10 @@ class SpotsController < ApplicationController
     else
       redirect_to spot_path(@spot.id)
     end
+  end
+
+  def search
+    @spots = Spot.search(params[:keyword])
   end
 
 
