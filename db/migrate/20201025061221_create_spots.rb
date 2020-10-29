@@ -6,6 +6,7 @@ class CreateSpots < ActiveRecord::Migration[6.0]
       t.text :description,null: false
       t.integer :city_id, null: false
       t.integer :location_id, null: false
+      t.integer :genre_id, null: false
 
       t.timestamps
     end
