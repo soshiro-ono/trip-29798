@@ -11,6 +11,11 @@
       <div class="new-spots">
         <%= f.text_field :title, class:"spots-text", placeholder: "タイトルを入れて下さい" %>
       </div>
+
+      <%= f.collection_select(:city_id, City.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      <%= f.collection_select(:location_id, Location.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      
         <h2>コメント入力欄</h2>
       <div class="new-spots">
         <%= f.text_area :description, class:"spots-text", placeholder: "感想を入力して下さい" %>
