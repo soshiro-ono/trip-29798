@@ -8,9 +8,20 @@ class Spot < ApplicationRecord
   # Active Storageのテーブルとspotsテーブルのアソシエーションを定義した。
   # spots_controller.rbにて、imageカラムの保存を許可(ストロングパラメーター)
 
+  # アクティブハッシュのアソシエーション
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :city
+  belongs_to_active_hash :location
+  belongs_to_active_hash :genre
+  # アクティブハッシュのアソシエーション
+
+
+
   # バリデーション
   validates :title, presence: true
   validates :description, presence: true
+  validates :city_id, numericality: { other_than: 1 } 
+
   # バリデーション
 
   
