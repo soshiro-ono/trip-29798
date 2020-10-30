@@ -1,10 +1,19 @@
-<div class="contents row">
-  <p><%= @nickname %>さんの投稿一覧</p>
-  <% @spots.each do |spot| %>
-    <%= link_to spot_path(spot.id) do %>
-      <%= image_tag spot.image, class: "spot-img"%>
-      <p><%= spot.description %></p>
-      <span class="title"><%= spot.title %></span>
-    <% end %>
-  <% end %>
+<%= render "shared/header" %>
+<div class="main">
+  <div class="spot-search">
+    <div class="contents row">
+      <p><%= @nickname %>さんの投稿一覧</p>
+      <% @spots.each do |spot| %>
+        <%= link_to spot_path(spot.id) do %>
+          <div class="spot">
+            <%= image_tag spot.image, class: "spot-box-img"%>
+            <p><%= spot.title %></p>
+            <p><%= spot.description %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
+
+<%= render "shared/footer" %>
