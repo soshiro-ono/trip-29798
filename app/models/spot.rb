@@ -28,7 +28,6 @@ class Spot < ApplicationRecord
   # 現段階ではユーザーで検索ができない
   def self.search(search)
     if search != ""
-      Spot.where('title LIKE(?)', "%#{search}%")
       Spot.where('description LIKE(?)', "%#{search}%")
     else
       Spot.all
