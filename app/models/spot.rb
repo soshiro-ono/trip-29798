@@ -18,9 +18,20 @@ class Spot < ApplicationRecord
 
 
   # バリデーション
-  validates :title, presence: true
-  validates :description, presence: true
-  validates :city_id, numericality: { other_than: 1 } 
+  with_options presence: true do
+    validates :image
+    validates :title
+    validates :description
+    validates :city_id
+    validates :genre_id
+    validates :location_id
+  end
+
+  with_options numericality: { other_than: 1 ,message: "選択して下さい"} do
+    validates :city_id
+    validates :genre_id
+    validates :location_id
+  end
 
   # バリデーション
 
