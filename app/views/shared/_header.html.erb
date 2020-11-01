@@ -1,6 +1,7 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
 <header class='top-page-header wrapper'>
-  <h1 class="title">TRIP HYOGO</h1>
+  <%= link_to 'TRIP HYOGO', root_path, class: "title" %>
+
   <nav>
     <ul class="main-nav">
       <%# deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
