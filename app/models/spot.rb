@@ -22,11 +22,16 @@ class Spot < ApplicationRecord
     validates :image
     validates :title
     validates :description
+    validates :city_id
+    validates :genre_id
+    validates :location_id
   end
 
-  validates :city_id, numericality: { other_than: 1 } 
-  validates :genre_id, numericality: { other_than: 1 } 
-  validates :location_id, numericality: { other_than: 1 } 
+  with_options numericality: { other_than: 1 ,message: "選択して下さい"} do
+    validates :city_id
+    validates :genre_id
+    validates :location_id
+  end
 
   # バリデーション
 
