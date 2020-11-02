@@ -1,17 +1,18 @@
 # README
 
 ## アプリケーション名
-trip-29798
+go-to-hyogo
 
 ## アプリケーション概要
 兵庫県に特化した観光口コミサイトです。
 地域を絞った分、他のwebサービスでは載っていないローカルな情報を知ることができます。
 ## URL
+https://go-to-hyogo.herokuapp.com/
 
 ## テスト用アカウント
 
 ## 利用方法
-ログインしたユーザーは画像とテキストを投稿することができます。また他人の投稿に対してコメント、評価をつけることができます。また検索機能が実装されているため自分の興味のあるワードを検索し調べることも可能です。兵庫に旅行する際はこのアプリケーションを使うことで他の観光サイトには載っていないようなスポットをまわることができます。
+ログインしたユーザーは画像とテキストを投稿することができます。また他人の投稿に対してコメントをつけることができます。検索機能が実装されているため自分の興味のあるワードを検索し調べることも可能です。兵庫に旅行する際はこのアプリケーションを使うことで他の観光サイトには載っていないようなスポットをまわることができます。
 
 
 ## 目指した課題解決
@@ -31,15 +32,43 @@ trip-29798
 ユーザーが検索し欲しい情報を探しやすくすることができます。
 
 ## 実装した機能についてのGIFと説明
+記事投稿機能
+記事にコメントをつける機能
+deviseを用いたユーザー管理機能
+記事検索機能
+
 
 ## 実装予定の機能
 ### タグ付機能
-タグをつけることによってより情報を探しやすくしております。
+タグをつけることによってより情報を探しやすくする予定です。
+
+### プルダウン検索機能
+ransackを使いプルダウン検索ができるようにする予定です。
 
 ## データベース設計
 https://gyazo.com/776e84e0ca0642a35007ede0881a9ff4
 
 ## ローカルでの動作方法
+ruby  2.6.5
+rails  6.0
+mysql2  0.5.3
+データベース（MySQL）
+
+git clone後、
+go-to-hyogoディレクトリにてrails sを実行します。
+
+
+## 各種機能＆導入技術
+ruby  2.6.5
+rails  6.0
+mysql2  0.5.3
+データベース（MySQL）
+テスト（Rspec、Capybara、factory_bot）
+ユーザー登録＆ログイン(devise)
+<!-- 検索（ransack） -->
+<!-- ページネーション（kaminari） -->
+
+
 
 # テーブル設計
 
@@ -64,30 +93,32 @@ https://gyazo.com/776e84e0ca0642a35007ede0881a9ff4
 | user   | references | null: false, foreign_key: true |
 | title  | string | null: false |
 | description   | text | null: false |
-<!-- もしかするとこの先何か追加するかもアクティブハッシュ？ -->
+| city_id   | integer | null: false |
+| genre_id   | integer | null: false |
+| location_id   | integer | null: false |
+
 
 ### Association
-- has_many :spot_tags
-- has_many :tags, through: spot_tags
+<!-- - has_many :spot_tags
+- has_many :tags, through: spot_tags -->
 - has_many :comments
 - belongs_to :user
 
 
 
-## tags テーブル
+<!-- ## tags テーブル
 
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
 | name   | string | null: false |
-<!-- タグ付機能の実装を参照、chat-appの動画ではない -->
 
 ### Association
 - has_many :spot_tags
-- has_many :spots, through: spot_tags
+- has_many :spots, through: spot_tags -->
 
 
 
-## spot_tags テーブル
+<!-- ## spot_tags テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
@@ -96,7 +127,7 @@ https://gyazo.com/776e84e0ca0642a35007ede0881a9ff4
 
 ### Association
 - belongs_to :spot
-- belongs_to :tag
+- belongs_to :tag -->
 
 
 
