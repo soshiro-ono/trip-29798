@@ -30,7 +30,7 @@
     <div class="grid">
       <% @spots.each do |spot| %>
         <%= link_to spot_path(spot.id) do %>
-            <div class="spot">
+            <div class="index-spot">
               <%= image_tag spot.image, class: "spot-img"%>
               <p><%= spot.title %></p>
             </div>
