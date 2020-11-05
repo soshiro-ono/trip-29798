@@ -14,20 +14,42 @@
         <%= link_to '削除', spot_path, method: :delete, class:'spot-destroy' %>
       <% end %>
     <% end %>
+  
 
 
-    <h1 class="spot-midasi">SPOTの情報</h1>
+    <h1 class="spot-midasi">投稿してくれた観光地の情報</h1>
     <table class="detail-table">
       <tbody>
         <tr>
-          <td class="detail-value"><%= @spot.user.nickname %></td>
+          <th class="detail-spot">投稿者</th>
+          <td class="detail-value"><%= link_to @spot.user.nickname, user_path(@spot.user_id) %></td>
         </tr>
+
         <tr>
+          <th class="detail-spot">タイトル</th>
           <td class="detail-value"><%= @spot.title %></td>
         </tr>
+
         <tr>
+          <th class="detail-spot">感想</th>
           <td class="detail-value"><%= @spot.description %></td>
         </tr>
+
+        <tr>
+          <th class="detail-spot">場所</th>
+          <td class="detail-value"><%= @spot.city.name %></td>
+        </tr>
+
+        <tr>
+          <th class="detail-spot">ロケーション</th>
+          <td class="detail-value"><%= @spot.location.name %></td>
+        </tr>
+
+        <tr>
+          <th class="detail-spot">ジャンル</th>
+          <td class="detail-value"><%= @spot.genre.name %></td>
+        </tr>
+
       </tbody>
     </table>
 
@@ -49,7 +71,7 @@
         <% if @comments %>
           <% @comments.each do |comment| %>
             <p>
-              <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+              <strong><%= link_to comment.user.nickname, user_path(comment.user_id) %>：</strong>
               <%= comment.text %>
             </p>
           <% end %>
