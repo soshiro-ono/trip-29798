@@ -1,25 +1,31 @@
 <%= render "shared/header" %>
 
-<div class="container">
-  <%= link_to image_tag('兵庫県.png' , size: '185x50'), "/" %>
-
   <div class="spot-main">
-    <%= form_with(model: @spot, local: true) do |f| %>
-        <h2>投稿画像</h2>
+    <%= form_with(model: @spot, local: true, class: "spot-form") do |f| %>
+      <h2>投稿画像</h2>
       <div class="click-upload">
-        <%= f.file_field :image, id:"item-image" %>
+        <%= f.file_field :image, id:"spot-image" %>
       </div>
-        <h2>タイトル入力欄</h2>
+
       <div class="new-spots">
+        <h2>タイトル入力欄</h2>
         <%= f.text_field :title, class:"spots-text", placeholder: "タイトルを入れて下さい" %>
       </div>
 
-      <%= f.collection_select(:city_id, City.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
-      <%= f.collection_select(:location_id, Location.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
-      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      <%# <h2 class="spot-category">投稿詳細</h2> %>
+      <div class="pulldown-spots">
+        <div class="pulldown">
+          <h2>市</h2>
+          <%= f.collection_select(:city_id, City.all, :id, :name, {}, {class:"select-box", id:"spot-category"}) %>
+          <h2>ロケーション</h2>
+          <%= f.collection_select(:location_id, Location.all, :id, :name, {}, {class:"select-box", id:"spot-category"}) %>
+          <h2>ジャンル</h2>
+          <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"spot-category"}) %>
+        </div>
+      </div>
 
-        <h2>コメント入力欄</h2>
       <div class="new-spots">
+      <h2>コメント入力欄</h2>
         <%= f.text_area :description, class:"spots-text", placeholder: "感想を入力して下さい" %>
       </div>
       <div class="spot-btn-contents">
@@ -27,6 +33,5 @@
       </div>
     <% end %>
   </div>
-</div>
 <%= render "shared/footer" %>
 
