@@ -46,6 +46,7 @@ class SpotsController < ApplicationController
 
   def search
     @spots = @p.result
+    # binding.pry
   end
   
   
@@ -61,6 +62,7 @@ class SpotsController < ApplicationController
   
   def search_spot
     @p = Spot.ransack(params[:q])  # 検索オブジェクトを生成
+    # binding.pry
   end
   
 end
