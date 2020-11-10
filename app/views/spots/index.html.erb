@@ -8,10 +8,21 @@
     </p>
 
     <%# 検索バー %>
-    <%= form_with(url: search_spots_path, local: true, method: :get, class: "search-form") do |f| %>
-      <%= f.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-      <%= f.submit "検索", class: "search-btn" %>
-    <% end %>
+    
+    <%= search_form_for @p, url: search_spots_path do |f| %>
+      <%= f.search_field :description_cont %>
+
+      <%= f.label :gerne_id_eq, 'ジャンル：'  %>
+      <%= f.collection_select :genre_id, Genre.all, :id, :name, {} %>
+      <br>
+      <%= f.label :location_id_eq, 'ロケーション：'  %>
+      <%= f.collection_select :location_id, Location.all, :id, :name, {} %>
+      <br>
+      <%= f.label :city_id_eq, '市：'  %>
+      <%= f.collection_select :city_id, City.all, :id, :name, {} %>
+      <br>
+      <%= f.submit '検索' %>
+    <% end  %>
     <%# 検索バー %>
 
     <%# カメラ新規投稿 %>

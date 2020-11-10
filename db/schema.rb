@@ -33,12 +33,6 @@ ActiveRecord::Schema.define(version: 2020_10_27_090649) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "spot_id"
@@ -54,10 +48,8 @@ ActiveRecord::Schema.define(version: 2020_10_27_090649) do
     t.integer "city_id", null: false
     t.integer "location_id", null: false
     t.integer "genre_id", null: false
-    t.bigint "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_spots_on_category_id"
     t.index ["user_id"], name: "index_spots_on_user_id"
   end
 
@@ -75,6 +67,5 @@ ActiveRecord::Schema.define(version: 2020_10_27_090649) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "spots", "categories"
   add_foreign_key "spots", "users"
 end
