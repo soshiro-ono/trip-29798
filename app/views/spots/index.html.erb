@@ -10,18 +10,19 @@
     <%# 検索バー %>
     
     <%= search_form_for @p, url: search_spots_path do |f| %>
-      <%= f.search_field :description_cont %>
+    <div class = "search-keyword">
+      <%= f.search_field :description_cont, placeholder:"キーワード" %>
+      <%= f.submit '検索' %>
+    </div>
+
+      <%= f.label :city_id_eq, '市：'  %>
+      <%= f.collection_select :city_id, City.all, :id, :name, {},{class:"category-select"} %>
+
+      <%= f.label :location_id_eq, 'ロケーション：'  %>
+      <%= f.collection_select :location_id, Location.all, :id, :name, {},{class:"category-select"} %>
 
       <%= f.label :gerne_id_eq, 'ジャンル：'  %>
-      <%= f.collection_select :genre_id, Genre.all, :id, :name, {} %>
-      <br>
-      <%= f.label :location_id_eq, 'ロケーション：'  %>
-      <%= f.collection_select :location_id, Location.all, :id, :name, {} %>
-      <br>
-      <%= f.label :city_id_eq, '市：'  %>
-      <%= f.collection_select :city_id, City.all, :id, :name, {} %>
-      <br>
-      <%= f.submit '検索' %>
+      <%= f.collection_select :genre_id, Genre.all, :id, :name, {},{class:"category-select"} %>
     <% end  %>
     <%# 検索バー %>
 

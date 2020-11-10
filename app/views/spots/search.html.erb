@@ -4,19 +4,37 @@
   <div class="spot-search">
 
     <%= search_form_for @p, url: search_spots_path do |f| %>
-      <%= f.search_field :title_cont %>
+    <div class = "search-keyword">
+      <%= f.search_field :description_cont, placeholder:"キーワード" %>
       <%= f.submit '検索' %>
+    </div>
     <% end %>
     
     <div class="contents row">
       <% @spots.each do |spot| %>
-        <%= link_to spot_path(spot.id) do %>
           <div class="spot">
+          <%= link_to spot_path(spot.id) do %>
             <%= image_tag spot.image, class: "spot-box-img" %>
-            <p><%= spot.title %></p>
-            <p><%= spot.description %></p>
+          <% end %>
+            <table class="detail-table">
+              <tbody>
+                <tr>
+                  <th class="detail-spot">投稿者</th>
+                  <td class="detail-value"><%= link_to spot.user.nickname, user_path(spot.user_id) %></td>
+                </tr>
+
+                <tr>
+                  <th class="detail-spot">タイトル</th>
+                  <td class="detail-value"><%= spot.title %></td>
+                </tr>
+
+                <tr>
+                  <th class="detail-spot">感想</th>
+                  <td class="detail-value"><%= spot.description %></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-        <% end %>
       <% end %>
     </div>
   </div>
