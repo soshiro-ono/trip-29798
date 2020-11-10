@@ -2,15 +2,17 @@
 
 <div class="main">
   <div class="spot-search">
-    <%= form_with(url: search_spots_path, local: true, method: :get, class: "search-form") do |f| %>
-      <%= f.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-      <%= f.submit "検索", class: "search-btn" %>
+
+    <%= search_form_for @p, url: search_spots_path do |f| %>
+      <%= f.search_field :title_cont %>
+      <%= f.submit '検索' %>
     <% end %>
+    
     <div class="contents row">
       <% @spots.each do |spot| %>
         <%= link_to spot_path(spot.id) do %>
           <div class="spot">
-            <%= image_tag spot.image, class: "spot-box-img"%>
+            <%= image_tag spot.image, class: "spot-box-img" %>
             <p><%= spot.title %></p>
             <p><%= spot.description %></p>
           </div>

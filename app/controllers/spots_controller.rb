@@ -1,6 +1,7 @@
 class SpotsController < ApplicationController
   before_action :authenticate_user!,except: [:index,:show,:search]
   before_action :set_spot, only: [:edit, :show, :update,:destroy]  
+  before_action :search_spot, only: [:index, :search]
 
   def index
     @spots = Spot.all
@@ -44,18 +45,24 @@ class SpotsController < ApplicationController
   end
 
   def search
-    @spots = Spot.search(params[:keyword])
+    @spots = @p.result
+    @binding.pry
   end
-
-
+  
+  
   private
   def spot_params
     params.require(:spot).permit(:title, :image, :description, :genre_id, :city_id, :location_id).merge(user_id: current_user.id)
   end
-
+  
   def set_spot
     @spot = Spot.find(params[:id])
   end
   # edit, :show, :update,:destroyをまとめている
-
+  
+  def search_spot
+    @p = Spot.ransack(params[:q])  # 検索オブジェクトを生成
+  end
+  
 end
+
