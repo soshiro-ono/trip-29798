@@ -1,12 +1,11 @@
 class Genre < ActiveHash::Base
   self.data = [
-    { id: 1, name: '--' },
-    { id: 2, name: '温泉' },
-    { id: 3, name: 'ショッピング' },
-    { id: 4, name: '体験' },
-    { id: 5, name: '歴史' },
-    { id: 6, name: 'スポーツ' },
-    { id: 7, name: '博物館、美術館、記念館' },
-    { id: 8, name: 'その他' },
+    { id: 1, name: '温泉' },
+    { id: 2, name: 'ショッピング' },
+    { id: 3, name: '体験' },
+    { id: 4, name: '歴史' },
+    { id: 5, name: 'スポーツ' },
+    { id: 6, name: '博物館、美術館、記念館' },
+    { id: 7, name: 'その他' },
   ]
   end

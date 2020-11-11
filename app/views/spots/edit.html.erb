@@ -2,6 +2,7 @@
 
   <div class="spot-main">
     <%= form_with(model: @spot, local: true, class: "spot-form") do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
       <h2>投稿画像</h2>
       <div class="click-upload">
         <%= f.file_field :image, id:"spot-image" %>

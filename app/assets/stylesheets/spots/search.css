@@ -16,6 +16,17 @@
   object-fit: contain;
 }
 
+/* テーブル */
+.detail-table{
+  margin-top: 1%;
+  margin-bottom: 12%;
+}
+/* テーブル */
+
+.search-keyword{
+  margin-bottom: 10%;
+}
+
 
 /* .main{
   max-width: 1100px;
