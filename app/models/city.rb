@@ -1,6 +1,5 @@
 class City < ActiveHash::Base
   self.data = [
-    { id: 1, name: '--' },
     { id: 2, name: '神戸市' },
     { id: 3, name: '尼崎市' },
     { id: 4, name: '西宮市' },

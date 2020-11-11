@@ -26,11 +26,6 @@ class Spot < ApplicationRecord
     validates :location_id
   end
 
-  with_options numericality: { other_than: 1 ,message: "選択して下さい"} do
-    validates :city_id
-    validates :genre_id
-    validates :location_id
-  end
 
   # バリデーション
 
