@@ -49,7 +49,15 @@
   margin-right: 2%;
 }
 
+.search-pulldown-index{
+  margin-bottom: 1%;
+}
+
 .search-keyword-index{
   margin:1% 0%;
+}
+
+.radio_button-select{
+  margin-left: 3%;
 }
 /* 検索バー */

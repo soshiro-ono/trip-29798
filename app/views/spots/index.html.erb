@@ -15,6 +15,7 @@
       <%= f.submit '検索' %>
     </div>
 
+    <div class = "search-pulldown-index">
       <%= f.label :city_id_eq, '市：'  %>
       <%= f.collection_select :city_id_eq, City.all, :id, :name, {include_blank: '指定なし'},{class:"category-select"} %>
 
@@ -23,6 +24,22 @@
 
       <%= f.label :gerne_id_eq, 'ジャンル：'  %>
       <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, {include_blank: '指定なし'},{class:"category-select"} %>
+    </div>
+
+
+      <%= f.label :price, '予算：' %>
+      <%= f.radio_button :price_lteq, '',{class:"radio_button-select"} %>
+      指定なし
+      <%= f.radio_button :price_lteq, '0',{class:"radio_button-select"} %>
+      0円
+      <%= f.radio_button :price_lteq, '1000',{class:"radio_button-select"} %>
+      1000円以下
+      <%= f.radio_button :price_lteq, '2500',{class:"radio_button-select"} %>
+      2500円以下
+      <%= f.radio_button :price_lteq, '5000',{class:"radio_button-select"} %>
+      5000円以下
+      <%= f.radio_button :price_lteq, '10000',{class:"radio_button-select"} %>
+      10000円以下
     <% end  %>
     <%# 検索バー %>
 
