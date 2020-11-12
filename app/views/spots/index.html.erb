@@ -11,7 +11,7 @@
     
     <%= search_form_for @p, url: search_spots_path do |f| %>
     <div class = "search-keyword-index">
-      <%= f.search_field :description_cont, placeholder:"キーワード" %>
+      <%= f.search_field :description_or_title_cont, placeholder:"キーワード" %>
       <%= f.submit '検索' %>
     </div>
 
