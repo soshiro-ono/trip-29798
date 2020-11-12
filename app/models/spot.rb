@@ -24,6 +24,7 @@ class Spot < ApplicationRecord
     validates :city_id
     validates :genre_id
     validates :location_id
+    validates :price
   end
 
 
