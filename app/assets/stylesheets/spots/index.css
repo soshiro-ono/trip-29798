@@ -31,7 +31,9 @@
 .grid{
   display: grid;
   gap:16px;
-  grid-template-columns: repeat(auto-fit,minmax(290px,1fr));
+  /* grid-template-columns: repeat(auto-fit,minmax(290px,1fr)); */
+  /* レスポンシブ対応は@mediaを使用するためいったんコメント↑ */
+  grid-template-columns: repeat(3,1fr);
   margin-top: 6%;
   margin-bottom: 50px;
   /* margin: 0px auto; */
@@ -61,3 +63,28 @@
   margin-left: 3%;
 }
 /* 検索バー */
+
+
+/* タブレット */
+@media (max-width: 600px){
+  .grid{
+    display: grid;
+    gap:16px;
+    grid-template-columns: repeat(2,1fr);
+    margin-top: 6%;
+    margin-bottom: 50px;
+    /* margin: 0px auto; */
+  }
+}
+
+/* スマホ */
+@media (max-width: 400px){
+  .grid{
+    display: grid;
+    gap:16px;
+    grid-template-columns: repeat(1,1fr);
+    margin-top: 6%;
+    margin-bottom: 50px;
+    /* margin: 0px auto; */
+  }
+}

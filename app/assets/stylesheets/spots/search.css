@@ -9,6 +9,11 @@
   padding: 5vh 0;
 }
 
+.spot-search{
+  text-align: center;
+  width: 100vw;
+}
+
 .spot-box-img{
   height: 50vh;
   width: 60vw;
@@ -24,8 +29,15 @@
 /* テーブル */
 
 .search-keyword{
-  margin-bottom: 10%;
+  margin-bottom: 1%;
+  width: 100vw;
 }
+
+.category-select{
+  width: 10vw;
+}
+
+
 
 
 /* .main{
