@@ -36,6 +36,15 @@
   justify-content: space-around;
 }
 
+.spots-price-box{
+  display: flex;
+  justify-content: space-between;
+}
+
+.spots-price{
+  width: 24%;
+}
+
 /* .spot-category{
   margin-top: 60px;
 } */
