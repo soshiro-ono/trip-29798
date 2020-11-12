@@ -7,7 +7,7 @@ describe Spot do
 
   describe '観光地投稿' do
     context '投稿がうまくいくとき' do
-      it "image,title,description,city_id,location_id,genre_idが存在すれば登録できる" do
+      it "image,title,description,city_id,location_id,genre_id,priceが存在すれば登録できる" do
         expect(@spot).to be_valid
       end
     end
@@ -33,6 +33,12 @@ describe Spot do
         expect(@spot.errors.full_messages).to include("Description can't be blank")
       end
 
+      it "priceが空では登録できない" do
+        @spot.price = ""
+        @spot.valid?
+        expect(@spot.errors.full_messages).to include("Price can't be blank")
+      end
+
       it "city_idが空では登録できない" do
         @spot.city_id = ""
         @spot.valid?
@@ -49,24 +55,6 @@ describe Spot do
         @spot.location_id = ""
         @spot.valid?
         expect(@spot.errors.full_messages).to include("Location can't be blank")
-      end
-
-      it "city_idが1では登録できない" do
-        @spot.city_id = 1
-        @spot.valid?
-        expect(@spot.errors.full_messages).to include("City 選択して下さい")
-      end
-
-      it "genre_idが1では登録できない" do
-        @spot.genre_id = 1
-        @spot.valid?
-        expect(@spot.errors.full_messages).to include("Genre 選択して下さい")
-      end
-
-      it "location_idが1では登録できない" do
-        @spot.location_id = 1
-        @spot.valid?
-        expect(@spot.errors.full_messages).to include("Location 選択して下さい")
       end
     end
   end

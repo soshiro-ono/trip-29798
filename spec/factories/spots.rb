@@ -5,6 +5,7 @@ FactoryBot.define do
     city_id            {2}
     genre_id           {2}
     location_id        {2}
+    price              {1200}
 
     association :user
 
