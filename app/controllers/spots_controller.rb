@@ -4,7 +4,7 @@ class SpotsController < ApplicationController
   before_action :search_spot, only: [:index, :search]
 
   def index
-    @spots = Spot.all
+    @spots = Spot.all.page(params[:page]).per(9)
   end
 
   def new
