@@ -1,8 +1,8 @@
 
 
 .spot-main{
-  width: 70vw;
-  min-width: 450px;
+  /* width: 70vw; */
+  /* min-width: 350px; */
   padding: 10vh 15vw;
   display: flex;
   align-items: center;
@@ -10,7 +10,8 @@
 }
 
 .spot-form{
-  width: 100%;
+  /* width: 100%; */
+  min-width: 350px;
   padding: 50px;
   background-color: #f8f8f8;
 }
@@ -49,6 +50,10 @@
   width: 220px;
 }
 
+.select-box{
+  margin-right: 48px;
+  margin-left: 8px;
+}
 
 
 /* .spot-category{
@@ -64,3 +69,61 @@
 .spot-btn{
   padding: 20px 60px;
 }
+
+
+
+/* タブレット */
+@media (max-width: 840px){
+  .pulldown{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .select-box{
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 8px;
+    width: 150px;
+  }
+  .spots-price-box{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .new-spots{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .spot-form{
+    padding: 0px;
+    width: 120%;
+  }
+  .spots-text{
+    width: 70%;
+  }
+
+}
+/* タブレット */
+
+
+
+
+/* スマホ */
+@media (max-width: 420px){
+  .pulldown{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .new-spots{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .spot-form{
+    min-width: 350px;
+  }
+}
+/* スマホ */
