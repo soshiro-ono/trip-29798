@@ -58,3 +58,21 @@ a {
   margin: auto;
   /* padding: 4%; */
 }
+
+/* タブレット */
+@media (max-width: 600px){
+  .top-page-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .main-nav li{
+    margin: 0px 12px;
+  }
+}
+/* タブレット */
+
+/* スマホ */
+/* 今回はタブレットと同じ */
+/* スマホ */
+

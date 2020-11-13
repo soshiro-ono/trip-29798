@@ -8,7 +8,6 @@
     </p>
 
     <%# 検索バー %>
-    
     <%= search_form_for @p, url: search_spots_path do |f| %>
     <div class = "search-keyword-index">
       <%= f.search_field :description_or_title_cont, placeholder:"キーワード" %>
@@ -17,13 +16,13 @@
 
     <div class = "search-pulldown-index">
       <%= f.label :city_id_eq, '市：'  %>
-      <%= f.collection_select :city_id_eq, City.all, :id, :name, {include_blank: '指定なし'},{class:"category-select"} %>
+      <%= f.collection_select :city_id_eq, City.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
 
       <%= f.label :location_id_eq, 'ロケーション：'  %>
-      <%= f.collection_select :location_id_eq, Location.all, :id, :name, {include_blank: '指定なし'},{class:"category-select"} %>
+      <%= f.collection_select :location_id_eq, Location.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
 
       <%= f.label :gerne_id_eq, 'ジャンル：'  %>
-      <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, {include_blank: '指定なし'},{class:"category-select"} %>
+      <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
     </div>
 
 

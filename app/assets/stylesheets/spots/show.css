@@ -13,7 +13,6 @@
 .spot-box-img{
   height: 50vh;
   width: 60vw;
-  min-height: 500px;
   object-fit: contain;
 }
 

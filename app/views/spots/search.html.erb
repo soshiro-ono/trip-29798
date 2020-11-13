@@ -10,13 +10,13 @@
 
     <div class = "search-pulldown-index">
       <%= f.label :city_id_eq, '市：'  %>
-      <%= f.collection_select :city_id_eq, City.all, :id, :name, {include_blank: '指定なし'},{class:"category-select"} %>
+      <%= f.collection_select :city_id_eq, City.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-search"} %>
 
       <%= f.label :location_id_eq, 'ロケーション：'  %>
-      <%= f.collection_select :location_id_eq, Location.all, :id, :name, {include_blank: '指定なし'},{class:"category-select"} %>
+      <%= f.collection_select :location_id_eq, Location.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-search"} %>
 
       <%= f.label :gerne_id_eq, 'ジャンル：'  %>
-      <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, {include_blank: '指定なし'},{class:"category-select"} %>
+      <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-search"} %>
     </div>
 
 
@@ -36,7 +36,7 @@
     <% end %>
 
     <tr>
-      <th><%= sort_link(@p, :price, "Price") %></th>
+      <th class="sort"><%= sort_link(@p, :price, "予算、入場料で並び替える") %></th>
       <th colspan="3"></th>
     </tr>
     
