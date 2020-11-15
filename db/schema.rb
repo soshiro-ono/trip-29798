@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2020_10_27_090649) do
     t.integer "city_id", null: false
     t.integer "location_id", null: false
     t.integer "genre_id", null: false
+    t.integer "price", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_spots_on_user_id"
