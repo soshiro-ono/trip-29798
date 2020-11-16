@@ -46,7 +46,6 @@ class SpotsController < ApplicationController
 
   def search
     @spots = @p.result
-    # binding.pry
   end
   
   
