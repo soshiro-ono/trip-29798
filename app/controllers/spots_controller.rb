@@ -63,5 +63,6 @@ class SpotsController < ApplicationController
     @p = Spot.ransack(params[:q])  # 検索オブジェクトを生成
   end
   
+  
 end
 
