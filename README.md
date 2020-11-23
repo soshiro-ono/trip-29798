@@ -9,10 +9,6 @@ go-to-hyogo
 ## URL
 https://go-to-hyogo.herokuapp.com/
 
-## ベーシック認証
-admin
-2222
-
 ## テスト用アカウント
 メールアドレス mai@com
 パスワード mai2525
