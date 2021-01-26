@@ -28,20 +28,9 @@
 /* 画面中央にずらす */
 
 
-.grid{
-  display: grid;
-  gap:16px;
-  grid-template-columns: repeat(auto-fit,minmax(290px,1fr));
-  /* レスポンシブ対応は@mediaを使用するためいったんコメント↑ */
-  /* grid-template-columns: repeat(3,1fr); */
-  margin-top: 6%;
-  margin-bottom: 50px;
-  /* margin: 0px auto; */
-}
-
 .spot-img {
-  width: 35vh;
-  height: 35vh;
+  width: 25vh;
+  height: 25vh;
 }
 
 
@@ -63,42 +52,3 @@
   margin-left: 3%;
 }
 /* 検索バー */
-
-
-/* タブレット */
-@media (max-width: 840px){
-  .grid{
-    display: grid;
-    gap:16px;
-    grid-template-columns: repeat(2,1fr);
-    margin-top: 6%;
-    margin-bottom: 50px;
-    /* margin: 0px auto; */
-  }
-  .search-pulldown-index{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .category-select-index{
-    width: 100px;
-  }
-}
-/* タブレット */
-
-
-
-
-/* スマホ */
-@media (max-width: 420px){
-  .grid{
-    display: grid;
-    gap:16px;
-    grid-template-columns: repeat(1,1fr);
-    margin-top: 6%;
-    margin-bottom: 50px;
-    /* margin: 0px auto; */
-  }
-}
-/* スマホ */

@@ -16,7 +16,7 @@
       <%# <h2 class="spot-category">投稿詳細</h2> %>
       <div class="pulldown-spots">
         <div class="pulldown">
-          <h2>市</h2>
+          <h2>国</h2>
           <%= f.collection_select(:city_id, City.all, :id, :name, {include_blank: '指定なし'}, {class:"select-box", id:"spot-category"}) %>
           <h2>ロケーション</h2>
           <%= f.collection_select(:location_id, Location.all, :id, :name, {include_blank: '指定なし'}, {class:"select-box", id:"spot-category"}) %>

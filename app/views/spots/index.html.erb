@@ -3,8 +3,7 @@
 <div class="main">
   <div class="main-content wrapper">
     <h2 class="page-title">Have a nice trip!</h2>
-    <p>新たな出会い提供するGO TO HYOGO。地方特化したローカルが情報満載です。
-      身近な知らない世界の発見に出かけましょう。
+    <p>バックパッカー達のエピソードを共有するアプリです。みんなのエピソードを覗いてみましょう。
     </p>
 
     <%# 検索バー %>
@@ -54,7 +53,7 @@
 
 
     <%# 画像一覧 %>
-    <div class="contents row">
+    <div class="contents">
       <div class="grid">
         <% @spots.each do |spot| %>
           <%= link_to spot_path(spot.id) do %>

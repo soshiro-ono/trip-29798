@@ -45,7 +45,7 @@ class SpotsController < ApplicationController
   end
 
   def search
-    @spots = @p.result
+    @spots = @p.result(params[:page]).per(9)
   end
   
   
