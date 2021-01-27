@@ -1,78 +1,26 @@
 <%= render "shared/header" %>
 
 <div class="main">
-  <div class="spot-search">
-    <%= search_form_for @p, url: search_spots_path do |f| %>
+  <%= search_form_for @p, url: search_spots_path do |f| %>
     <div class = "search-keyword">
       <%= f.search_field :description_cont, placeholder:"キーワード" %>
       <%= f.submit '検索' %>
     </div>
-
-    <div class = "search-pulldown-index">
-      <%= f.label :city_id_eq, '市：'  %>
-      <%= f.collection_select :city_id_eq, City.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-search"} %>
-
-      <%= f.label :location_id_eq, 'ロケーション：'  %>
-      <%= f.collection_select :location_id_eq, Location.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-search"} %>
-
-      <%= f.label :gerne_id_eq, 'ジャンル：'  %>
-      <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-search"} %>
-    </div>
+  <% end %>
 
 
-      <%= f.label :price, '予算：' %>
-      <%= f.radio_button :price_lteq, '',{class:"radio_button-select"} %>
-      指定なし
-      <%= f.radio_button :price_lteq, '0',{class:"radio_button-select"} %>
-      0円
-      <%= f.radio_button :price_lteq, '1000',{class:"radio_button-select"} %>
-      1000円以下
-      <%= f.radio_button :price_lteq, '2500',{class:"radio_button-select"} %>
-      2500円以下
-      <%= f.radio_button :price_lteq, '5000',{class:"radio_button-select"} %>
-      5000円以下
-      <%= f.radio_button :price_lteq, '10000',{class:"radio_button-select"} %>
-      10000円以下
-    <% end %>
-
-    <tr>
-      <th class="sort"><%= sort_link(@p, :price, "予算、入場料で並び替える") %></th>
-      <th colspan="3"></th>
-    </tr>
-    
-    <div class="contents row">
+  <div class="contents">
+    <div class="grid">
       <% @spots.each do |spot| %>
-          <div class="spot">
-          <%= link_to spot_path(spot.id) do %>
-            <%= image_tag spot.image, class: "spot-box-img" %>
-          <% end %>
-            <table class="detail-table">
-              <tbody>
-                <tr>
-                  <th class="detail-spot">投稿者</th>
-                  <td class="detail-value"><%= link_to spot.user.nickname, user_path(spot.user_id) %></td>
-                </tr>
-
-                <tr>
-                  <th class="detail-spot">タイトル</th>
-                  <td class="detail-value"><%= spot.title %></td>
-                </tr>
-
-                <tr>
-                  <th class="detail-spot">感想</th>
-                  <td class="detail-value"><%= spot.description %></td>
-                </tr>
-
-                <tr>
-                  <th class="detail-spot">予算、入場料など</th>
-                  <td class="detail-value"><%= spot.price %>円</td>
-                </tr>
-              </tbody>
-            </table>
+        <%= link_to spot_path(spot.id) do %>
+          <div class="index-spot">
+            <%= image_tag spot.image, class: "spot-img"%>
+            <p><%= spot.title %></p>
           </div>
+        <% end %>
       <% end %>
     </div>
-  </div>
+  </div>  
 </div>
 
 <%= render "shared/footer" %>

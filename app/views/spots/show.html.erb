@@ -3,19 +3,17 @@
 
 <div class="main">
   <div class="spot-show">
-    <div class='spot-img-content'>
-      <%= image_tag @spot.image ,class:"spot-box-img" %>
+    <div class="container py-4" id="works">
+      <div class="card-deck">
+        <div class="card">
+          <%= image_tag @spot.image ,class:"card-img-top" %>
+          <div class="card-body">
+            <h5 class="card-title"><%= @spot.title %></h5>
+            <p class="card-text"><%= @spot.description %></p>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <% if user_signed_in? %>
-      <% if @spot.user_id == current_user.id %>
-        <%= link_to '投稿の編集', edit_spot_path, method: :get, class: "spot-red-btn" %>
-        <p class='or-text'>or</p>
-        <%= link_to '削除', spot_path, method: :delete, class:'spot-destroy' %>
-      <% end %>
-    <% end %>
-  
-
 
     <h1 class="spot-midasi">投稿してくれた観光地の情報</h1>
     <table class="detail-table">
@@ -29,33 +27,22 @@
           <th class="detail-spot">タイトル</th>
           <td class="detail-value"><%= @spot.title %></td>
         </tr>
-
-        <tr>
-          <th class="detail-spot">感想</th>
-          <td class="detail-value"><%= @spot.description %></td>
-        </tr>
-
-        <tr>
-          <th class="detail-spot">場所</th>
-          <td class="detail-value"><%= @spot.city.name %></td>
-        </tr>
-
-        <tr>
-          <th class="detail-spot">ロケーション</th>
-          <td class="detail-value"><%= @spot.location.name %></td>
-        </tr>
-
-        <tr>
-          <th class="detail-spot">ジャンル</th>
-          <td class="detail-value"><%= @spot.genre.name %></td>
-        </tr>
-
-        <tr>
-          <th class="detail-spot">予算、入場料など</th>
-          <td class="detail-value"><%= @spot.price %>円</td>
-        </tr>
+        <%# <tr>
+          <th class="detail-spot">住所</th>
+          <td class="detail-value"><%= @spot.country %></td>
+        </tr> %>
       </tbody>
     </table>
+    
+
+
+    <% if user_signed_in? %>
+      <% if @spot.user_id == current_user.id %>
+        <%= link_to '投稿の編集', edit_spot_path, method: :get, class: "spot-red-btn" %>
+        <p class='or-text'>or</p>
+        <%= link_to '削除', spot_path, method: :delete, class:'spot-destroy' %>
+      <% end %>
+    <% end %>
 
     <%# コメント記入欄 %>
     <div class="container">

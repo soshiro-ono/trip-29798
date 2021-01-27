@@ -1,5 +1,4 @@
 class Spot < ApplicationRecord
-  # has_many :tags, through: spot_tags
   has_many :comments
   belongs_to :user
   has_one_attached :image
@@ -20,22 +19,12 @@ class Spot < ApplicationRecord
   with_options presence: true do
     validates :image
     validates :title
+    # validates :country
     validates :description
-    validates :city_id
-    validates :genre_id
-    validates :location_id
+    # validates :city_id
+    # validates :genre_id
+    # validates :location_id
     validates :price
   end
 
-
-  # バリデーション
-
-  
-  # def self.search(search)
-  #   if search != ""
-  #     Spot.where('description LIKE(?)', "%#{search}%")
-  #   else
-  #     Spot.all
-  #   end
-  # end
 end

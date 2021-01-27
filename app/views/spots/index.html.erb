@@ -3,41 +3,15 @@
 <div class="main">
   <div class="main-content wrapper">
     <h2 class="page-title">Have a nice trip!</h2>
-    <p>バックパッカー達のエピソードを共有するアプリです。みんなのエピソードを覗いてみましょう。
+    <p>みんなでスケボーを練習する場所を共有しましょう。
     </p>
 
     <%# 検索バー %>
     <%= search_form_for @p, url: search_spots_path do |f| %>
-    <div class = "search-keyword-index">
-      <%= f.search_field :description_or_title_cont, placeholder:"キーワード" %>
-      <%= f.submit '検索' %>
-    </div>
-
-    <div class = "search-pulldown-index">
-      <%= f.label :city_id_eq, '市：'  %>
-      <%= f.collection_select :city_id_eq, City.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
-
-      <%= f.label :location_id_eq, 'ロケーション：'  %>
-      <%= f.collection_select :location_id_eq, Location.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
-
-      <%= f.label :gerne_id_eq, 'ジャンル：'  %>
-      <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
-    </div>
-
-
-      <%= f.label :price, '予算：' %>
-      <%= f.radio_button :price_lteq, '',{class:"radio_button-select"} %>
-      指定なし
-      <%= f.radio_button :price_lteq, '0',{class:"radio_button-select"} %>
-      0円
-      <%= f.radio_button :price_lteq, '1000',{class:"radio_button-select"} %>
-      1000円以下
-      <%= f.radio_button :price_lteq, '2500',{class:"radio_button-select"} %>
-      2500円以下
-      <%= f.radio_button :price_lteq, '5000',{class:"radio_button-select"} %>
-      5000円以下
-      <%= f.radio_button :price_lteq, '10000',{class:"radio_button-select"} %>
-      10000円以下
+      <div class = "search-keyword-index">
+        <%= f.search_field :description_or_title_cont, placeholder:"キーワード" %>
+        <%= f.submit '検索' %>
+      </div>
     <% end  %>
     <%# 検索バー %>
 
@@ -53,24 +27,23 @@
 
 
     <%# 画像一覧 %>
-    <div class="contents">
-      <div class="grid">
-        <% @spots.each do |spot| %>
-          <%= link_to spot_path(spot.id) do %>
-            <div class="index-spot">
-              <%= image_tag spot.image, class: "spot-img"%>
-              <p><%= spot.title %></p>
+
+    <%# <div class="image"> %>
+      <% @spots.each do |spot| %>
+        <%= link_to spot_path(spot.id) do %>
+          <div class="card-deck">
+            <div class="card" style="width: 18rem;">
+              <%= image_tag spot.image, class: 'card-img-top',  width:"100%", height:"240" %>
+              <div class="card-body">
+                <h5 class="card-title"><%= spot.title %></h5>
+                <p class="card-text"><%= link_to spot.user.nickname, user_path(spot.user_id) %></p>
+                <p class="card-text"><%= spot.price %>円</p>
+              </div>
             </div>
-          <% end %>
+          </div>
         <% end %>
-      </div>
-    </div>
-
-
-
-
-
-
+      <% end %>
+    <%# </div> %>
 
     <%# 画像投稿 %>
     <div class="main-content wrapper">

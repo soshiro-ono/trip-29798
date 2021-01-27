@@ -9,31 +9,26 @@
       </div>
 
       <div class="new-spots">
-        <h2>タイトル入力欄</h2>
+        <h2>施設名入力欄</h2>
         <%= f.text_field :title, class:"spots-text", placeholder: "タイトルを入れて下さい" %>
       </div>
 
-      <%# <h2 class="spot-category">投稿詳細</h2> %>
-      <div class="pulldown-spots">
-        <div class="pulldown">
-          <h2>国</h2>
-          <%= f.collection_select(:city_id, City.all, :id, :name, {include_blank: '指定なし'}, {class:"select-box", id:"spot-category"}) %>
-          <h2>ロケーション</h2>
-          <%= f.collection_select(:location_id, Location.all, :id, :name, {include_blank: '指定なし'}, {class:"select-box", id:"spot-category"}) %>
-          <h2>ジャンル</h2>
-          <%= f.collection_select(:genre_id, Genre.all, :id, :name, {include_blank: '指定なし'}, {class:"select-box", id:"spot-category"}) %>
-        </div>
-      </div>
-
       <div class = "spots-price-box">
-        <h2>一人当たりの入場料、予算</h2>
+        <h2>一人当たりの予算</h2>
         <%= f.text_field :price, class:"spots-price", placeholder: "半角数字のみ入力して下さい" %>
       </div>
 
-      <div class="new-spots">
-      <h2>コメント入力欄</h2>
-        <%= f.text_area :description, class:"spots-text", placeholder: "感想を入力して下さい" %>
+      <div class = "spots-price-box">
+        <h2>住所</h2>
+        <%= f.collection_select(:city_id, City.all, :id, :name, {include_blank: '指定なし'}, {class:"select-box", id:"spot-category"}) %>
       </div>
+
+      <div class="new-spots">
+        <h2>メモ入力欄</h2>
+        <%= f.text_area :description, class:"form-control", placeholder: "感想を入力して下さい" %>
+      </div>
+
+
       <div class="spot-btn-contents">
         <%= f.submit "投稿する" ,class:"spot-btn" %>
       </div>

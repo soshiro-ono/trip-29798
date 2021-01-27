@@ -1,37 +1,17 @@
 <%= render "shared/header" %>
+
+
 <div class="main">
-  <div class="spot-search">
-    <p><%= @nickname %>さんの投稿一覧</p>
-    <div class="contents row">
+  <p><%= @nickname %>さんの投稿一覧</p>
+  <div class="contents">
+    <div class="grid">
       <% @spots.each do |spot| %>
         <%= link_to spot_path(spot.id) do %>
-          <div class="spot">
-            <%= image_tag spot.image, class: "spot-box-img"%>
-          <% end %>
-          <table class="detail-table">
-            <tbody>
-            <tr>
-              <th class="detail-spot">投稿者</th>
-              <td class="detail-value"><%= link_to spot.user.nickname, user_path(spot.user_id) %></td>
-            </tr>
-            
-            <tr>
-              <th class="detail-spot">タイトル</th>
-              <td class="detail-value"><%= spot.title %></td>
-            </tr>
-
-            <tr>
-              <th class="detail-spot">感想</th>
-              <td class="detail-value"><%= spot.description %></td>
-            </tr>
-
-            <tr>
-              <th class="detail-spot">予算、入場料など</th>
-              <td class="detail-value"><%= spot.price %>円</td>
-            </tr>
-            </tbody>
-          </table>
+          <div class="index-spot">
+            <%= image_tag spot.image, class: "spot-img"%>
+            <p><%= spot.title %></p>
           </div>
+        <% end %>
       <% end %>
     </div>
   </div>
